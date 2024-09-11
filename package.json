@@ -1,13 +1,7 @@
 {
   "name": "potterthon",
-  "version": "0.0.0",
   "description": "On-screen graphics for Potterthon events",
   "homepage": "https://twitch.tv/potterthon",
-  "author": {
-    "name": "Jaio",
-    "email": "jaio0701@gmail.com",
-    "url": "https://github.com/jaiocg"
-  },
   "files": [
     "dashboard",
     "graphics",
@@ -31,7 +25,7 @@
     ],
     "graphics": [
       {
-        "file": "16x9-1p",
+        "file": "16x9-1p.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false
