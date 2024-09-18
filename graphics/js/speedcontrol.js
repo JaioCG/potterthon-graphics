@@ -27,15 +27,16 @@ $(() => {
 		
         // Player data
         var playerNames = [];
-        for (let i = 0; i < runData.teams.players.length; i++) {
+        for (let i = 0; i < runData.teams[0].players.length; i++) {
             var currentPlayer = (runData.teams[0].players[i].pronouns === undefined) ?
                 runData.teams[0].players[i].name :
                 runData.teams[0].players[i].name + ' [' + runData.teams[0].players[i].pronouns + ']';  
             playerNames[i] = currentPlayer;
         }
-        p1Name.html(playerNames[0]);
-        p2Name.html(playerNames[1]);
-        p3Name.html(playerNames[2]);
-        p4Name.html(playerNames[3]);
+        console.log(playerNames);
+        if (p1Name) p1Name.html(playerNames[0]);
+        if (p2Name) p2Name.html(playerNames[1]);
+        if (p3Name) p3Name.html(playerNames[2]);
+        if (p4Name) p4Name.html(playerNames[3]);
 	}
 });

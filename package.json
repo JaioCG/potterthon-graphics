@@ -2,6 +2,7 @@
   "name": "potterthon",
   "description": "On-screen graphics for Potterthon events",
   "homepage": "https://twitch.tv/potterthon",
+  "version": "1.0.0",
   "files": [
     "dashboard",
     "graphics",
