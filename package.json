@@ -46,5 +46,9 @@
     ]
   },
   "repository": "https://github.com/nodecg/nodecg.git",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "tmi.js": "^1.8.5"
+  }
 }
