@@ -63,9 +63,9 @@ module.exports = function (nodecg) {
             let message = '';
             for (let i = 0; i < commentaryInfo.length; i++) {
                 message += (i == 0) ?
-                    `Host: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}` :
-                    `Commentary: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}`;
-                if (i < commentaryInfo.length - 1) message += ', ';
+                    `Host: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch} | Commentary: ` :
+                    `${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}`;
+                if (i > 0 && i < commentaryInfo.length - 1) message += ' & ';
             }
             client.say(channel, message);
         }
