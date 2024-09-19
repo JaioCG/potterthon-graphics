@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+
+        <!-- https://github.com/finnhvman/matter -->
+        <link href="https://res.cloudinary.com/finnhvman/raw/upload/matter/matter-0.2.2.css" rel="stylesheet">
+        <style>
+            :root {
+                --matter-onsurface-rgb: 255, 255, 255;
+            }
+            .matter-textfield-filled {
+                width: 100%;
+            }
+            .commentary-container {
+                display: grid;
+                grid-template-columns: 37% 37% 25%;
+                gap: 8px 4px;
+            }
+        </style>
+	</head>
+	<body>
+        <div class="commentary-container">
+            <label class="matter-textfield-filled">
+                <input id="host-name" placeholder=" "/>
+                <span>Host Name</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="host-twitch" placeholder=" "/>
+                <span>Twitch</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="host-pronouns" placeholder=" "/>
+                <span>Pronouns</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm1-name" placeholder=" "/>
+                <span>Comm 1 Name</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm1-twitch" placeholder=" "/>
+                <span>Twitch</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm1-pronouns" placeholder=" "/>
+                <span>Pronouns</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm2-name" placeholder=" "/>
+                <span>Comm 2 Name</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm2-twitch" placeholder=" "/>
+                <span>Twitch</span>
+            </label>
+            <label class="matter-textfield-filled">
+                <input id="comm2-pronouns" placeholder=" "/>
+                <span>Pronouns</span>
+            </label>
+        </div>
+
+        <br>
+        <button class="matter-button-contained" id="submit-comms">Submit Commentary</button>
+
+        <!-- JavaScript -->
+         <script src="./js/commentary-control.js"></script>
+	</body>
+</html>

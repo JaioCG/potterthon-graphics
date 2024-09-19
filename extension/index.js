@@ -19,11 +19,11 @@ module.exports = function (nodecg) {
     var runnerInfo = [];
     var commentaryInfo = [];
 
-    // Update variables for chat commands based on speedcontrol data
+    // Update runner data
     var runDataActiveRun = nodecg.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
     runDataActiveRun.on('change', (runData) => {
         if (runData) {
-            // Runner data
+            runnerInfo = [];
             for (let i = 0; i < runData.teams[0].players.length; i++) {
                 var currentPlayer = {
                     name: runData.teams[0].players[i].name,
@@ -32,17 +32,29 @@ module.exports = function (nodecg) {
                 runnerInfo[i] = currentPlayer;
             }
             console.log(runnerInfo);
-
-            // Commentary data
-            for (let i = 0; i < runData.teams[1].players.length; i++) {
-                var currentPlayer = {
-                    name: runData.teams[1].players[i].name,
-                    twitch: runData.teams[1].players[i].social.twitch
-                };
-                commentaryInfo[i] = currentPlayer;
-            }
-            console.log(commentaryInfo);
         }
+    });
+
+    // Update commentary data
+    nodecg.listenFor('updateCommentary', (data) => {
+        commentaryInfo = [];
+        commentaryInfo[0] = {
+            name: data.host.name,
+            twitch: data.host.twitch
+        };
+        if (data.comm1.name) {
+            commentaryInfo[1] = {
+                name: data.comm1.name,
+                twitch: data.comm1.twitch
+            };
+        }
+        if (data.comm2.name) {
+            commentaryInfo[2] = {
+                name: data.comm2.name,
+                twitch: data.comm2.twitch
+            };
+        }
+        console.log(commentaryInfo);
     });
 
     // Handle chat commands
@@ -62,9 +74,13 @@ module.exports = function (nodecg) {
         } else if (command === 'commentary' || command === 'host') {
             let message = '';
             for (let i = 0; i < commentaryInfo.length; i++) {
-                message += (i == 0) ?
-                    `Host: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch} | Commentary: ` :
-                    `${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}`;
+                if (commentaryInfo.length > 1) {
+                    message += (i == 0) ?
+                        `Host: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch} | Commentary: ` :
+                        `${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}`;
+                } else {
+                    message += `Host: ${commentaryInfo[i].name}: https://twitch.tv/${commentaryInfo[i].twitch}`
+                }
                 if (i > 0 && i < commentaryInfo.length - 1) message += ' & ';
             }
             client.say(channel, message);

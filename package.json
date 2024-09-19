@@ -15,7 +15,15 @@
   ],
   "nodecg": {
     "compatibleRange": "^2.0.0",
-    "dashboardPanels": [],
+    "dashboardPanels": [
+        {
+            "name": "commentary-control",
+            "title": "Commentary Control",
+            "width": 3,
+            "file": "commentary-control.html",
+            "headerColor": "#525F78"
+        }
+    ],
     "graphics": [
       {
         "file": "16x9-1p.html",
