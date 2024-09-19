@@ -38,7 +38,31 @@
         "singleInstance": false
       },
       {
+        "file": "16x9-2p.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
         "file": "4x3-1p.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "4x3-2p.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "4x3-3p.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      },
+      {
+        "file": "4x3-4p.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false
