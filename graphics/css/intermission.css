@@ -1,0 +1,68 @@
+.big-text {
+    font-family: 'Pristina';
+    font-size: 48pt;
+    color: white;
+    text-align: right;
+    line-height: 40px;
+    position: fixed;
+}
+.small-text {
+    font-family: 'Source Serif';
+    font-size: 24pt;
+    color: white;
+    text-align: right;
+    line-height: 40px;
+    position: fixed;
+}
+.smaller-text {
+    font-family: 'Source Serif';
+    font-size: 18pt;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    position: fixed;
+}
+
+#up-next-runner {
+    width: 500px;
+    height: 75px;
+    left: 1150px;
+    top: 240px;
+    transform: rotate(-2deg);
+}
+#up-next-game {
+    width: 500px;
+    height: 75px;
+    left: 1150px;
+    top: 340px;
+    transform: rotate(-2deg);
+}
+#up-next-estimate {
+    width: 500px;
+    height: 75px;
+    left: 1150px;
+    top: 460px;
+}
+
+#on-deck-runner {
+    width: 500px;
+    height: 75px;
+    left: 1150px;
+    top: 640px;
+    transform: rotate(-2deg);
+}
+#on-deck-game {
+    width: 500px;
+    height: 75px;
+    left: 1150px;
+    top: 740px;
+    transform: rotate(-2deg);
+}
+
+#clock {
+    width: 300px;
+    height: 40px;
+    left: 525px;
+    top: 128px;
+    transform: rotate(4deg);
+}

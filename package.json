@@ -26,7 +26,7 @@
     ],
     "graphics": [
       {
-        "file": "16x9-1p.html",
+        "file": "intermission.html",
         "width": 1920,
         "height": 1080,
         "singleInstance": false
