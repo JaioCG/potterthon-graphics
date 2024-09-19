@@ -30,6 +30,12 @@
         "width": 1920,
         "height": 1080,
         "singleInstance": false
+      },
+      {
+        "file": "16x9-1p.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
       }
     ]
   },

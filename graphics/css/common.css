@@ -28,3 +28,53 @@
     height: 1080px;
     z-index: -1;
 }
+
+/* Game/Run Information */
+#game-title {
+    font-family: 'Monotype Corsiva';
+    font-size: 40pt;
+    position: relative;
+    top: 10px;
+}
+#run-category {
+    font-family: 'Source Serif';
+    font-size: 24pt;
+    position: relative;
+    top: 20px;
+}
+#run-estimate {
+    font-family: 'Source Serif';
+    font-size: 24pt;
+    position: relative;
+    top: 20px;
+}
+#timer {
+    font-family: 'Clarendon';
+    font-size: 50pt;
+    position: relative;
+    top: -10px;
+}
+.game-info {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 20px;
+}
+.timer-container {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    gap: 20px;
+    align-items: right;
+}
+
+/* People Formatting */
+.player-names {
+    font-family: 'Pristina';
+    font-size: 35pt;
+    position: fixed;
+    width: 365px;
+    height: 64px;
+    line-height: 64px;
+    text-align: right;
+}

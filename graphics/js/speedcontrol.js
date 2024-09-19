@@ -1,36 +1,34 @@
 'use strict';
 $(() => {
     // JQuery selectors
-	var gameTitle = $('#game-title');
-	var gameSystem = $('#game-platform');
+    var gameTitle = $('#game-title');
     var runCategory = $('#run-category');
-	var runEstimate = $('#run-estimate');
-	var p1Name = $('#p1-name');
+    var runEstimate = $('#run-estimate');
+    var p1Name = $('#p1-name');
     var p2Name = $('#p2-name');
     var p3Name = $('#p3-name');
     var p4Name = $('#p4-name');
-	
+
     // Runs whenevever speedcontrol run data changes
-	var runDataActiveRun = nodecg.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
-	runDataActiveRun.on('change', (newVal, oldVal) => {
-		if (newVal)
-			updateSceneFields(newVal);
-	});
+    var runDataActiveRun = nodecg.Replicant('runDataActiveRun', 'nodecg-speedcontrol');
+    runDataActiveRun.on('change', (newVal, oldVal) => {
+        if (newVal)
+            updateSceneFields(newVal);
+    });
 
     // Updates graphics
-	function updateSceneFields(runData) {
+    function updateSceneFields(runData) {
         // Game / run data
-		gameTitle.html(runData.game);
-		gameSystem.html(runData.system);
+        gameTitle.html(`${runData.game} (${runData.system})`);
         runCategory.html(runData.category);
-		runEstimate.html(runData.estimate);
-		
+        runEstimate.html(`Estimate: ${runData.estimate}`);
+
         // Player data
         var playerNames = [];
         for (let i = 0; i < runData.teams[0].players.length; i++) {
             var currentPlayer = (runData.teams[0].players[i].pronouns === undefined) ?
                 runData.teams[0].players[i].name :
-                runData.teams[0].players[i].name + ' [' + runData.teams[0].players[i].pronouns + ']';  
+                runData.teams[0].players[i].name + ' [' + runData.teams[0].players[i].pronouns + ']';
             playerNames[i] = currentPlayer;
         }
         console.log(playerNames);
@@ -38,5 +36,5 @@ $(() => {
         if (p2Name) p2Name.html(playerNames[1]);
         if (p3Name) p3Name.html(playerNames[2]);
         if (p4Name) p4Name.html(playerNames[3]);
-	}
+    }
 });
